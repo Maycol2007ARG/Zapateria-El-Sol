@@ -3,7 +3,7 @@ function Navbar({ carrito, onCartClick }) {
 
   return (
     <nav className="bg-stone-900 text-white px-6 py-4 flex justify-between items-center sticky top-0 z-50 shadow-lg">
-      <h1 className="text-2xl font-bold tracking-tight">👞 Zapatería El Sol</h1>
+      <h1 className="text-2xl font-bold tracking-tight">🛍️ El Sol</h1>
       <div className="flex items-center gap-6">
         <ul className="flex gap-6 text-sm font-medium max-sm:hidden">
           <li><a href="#inicio" className="hover:text-amber-400 transition">Inicio</a></li>
