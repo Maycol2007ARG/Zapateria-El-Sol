@@ -1,0 +1,25 @@
+function ProductCard({ producto, onAgregar }) {
+  return (
+    <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden group">
+      <div className="h-64 overflow-hidden">
+        <img
+          src={producto.img}
+          alt={producto.nombre}
+          className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+        />
+      </div>
+      <div className="p-5">
+        <h3 className="text-lg font-semibold text-stone-800">{producto.nombre}</h3>
+        <p className="text-amber-600 font-bold text-xl mt-1">${producto.precio.toFixed(2)}</p>
+        <button
+          onClick={onAgregar}
+          className="mt-3 w-full bg-stone-900 hover:bg-stone-800 text-white py-2 rounded-lg text-sm font-medium transition cursor-pointer"
+        >
+          Agregar al carrito
+        </button>
+      </div>
+    </div>
+  )
+}
+
+export default ProductCard
