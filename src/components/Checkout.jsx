@@ -4,6 +4,8 @@ function Checkout({ carrito }) {
   const [descuentoInput, setDescuentoInput] = useState("")
   const [descuento, setDescuento] = useState(null)
   const [mensaje, setMensaje] = useState("")
+  const [cliente, setCliente] = useState({ nombre: "", apellido: "", pais: "", edad: "", telefono: "" })
+  const [confirmado, setConfirmado] = useState(false)
 
   const subtotal = carrito.reduce((sum, item) => sum + item.producto.precio * item.cantidad, 0)
   const envio = subtotal > 100 ? 0 : 9.99
@@ -110,9 +112,32 @@ function Checkout({ carrito }) {
             <p className="text-xs text-stone-400 mt-1">Códigos: SOL10, SOL20, ZAPATO</p>
           </div>
 
-          <button className="mt-4 w-full bg-stone-900 hover:bg-stone-800 text-white py-3 rounded-xl font-semibold text-lg transition cursor-pointer">
-            Confirmar Pedido
+          <div className="border-t border-stone-200 pt-6 mt-6">
+            <h3 className="text-lg font-bold text-stone-800 mb-4">Datos del Cliente</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input type="text" placeholder="Nombre" value={cliente.nombre} onChange={(e) => setCliente({ ...cliente, nombre: e.target.value })} className="border border-stone-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400" />
+              <input type="text" placeholder="Apellido" value={cliente.apellido} onChange={(e) => setCliente({ ...cliente, apellido: e.target.value })} className="border border-stone-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400" />
+              <input type="text" placeholder="País" value={cliente.pais} onChange={(e) => setCliente({ ...cliente, pais: e.target.value })} className="border border-stone-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400" />
+              <input type="number" placeholder="Edad" value={cliente.edad} onChange={(e) => setCliente({ ...cliente, edad: e.target.value })} className="border border-stone-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400" />
+              <input type="tel" placeholder="Teléfono" value={cliente.telefono} onChange={(e) => setCliente({ ...cliente, telefono: e.target.value })} className="sm:col-span-2 border border-stone-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400" />
+            </div>
+          </div>
+
+          <button onClick={() => {
+            if (!cliente.nombre || !cliente.apellido || !cliente.pais || !cliente.edad || !cliente.telefono) {
+              alert("Por favor completá todos los datos del cliente.")
+              return
+            }
+            setConfirmado(true)
+          }} className="mt-4 w-full bg-stone-900 hover:bg-stone-800 text-white py-3 rounded-xl font-semibold text-lg transition cursor-pointer">
+            {confirmado ? "✅ Pedido Confirmado" : "Confirmar Pedido"}
           </button>
+
+          {confirmado && (
+            <div className="mt-4 bg-green-50 border border-green-200 text-green-800 rounded-xl p-4 text-sm">
+              🎉 <strong>Pedido confirmado</strong> — Gracias, {cliente.nombre} {cliente.apellido}. Te enviaremos la factura a tu teléfono {cliente.telefono}.
+            </div>
+          )}
         </div>
       </div>
     </section>
