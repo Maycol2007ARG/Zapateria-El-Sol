@@ -1,4 +1,8 @@
 function ProductCard({ producto, onAgregar }) {
+  const precioMostrado = producto.moneda === "ARS"
+    ? `ARS $ ${producto.precio.toLocaleString("es-AR")}`
+    : `$${producto.precio.toFixed(2)}`
+
   return (
     <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden group">
       <div className="h-64 overflow-hidden">
@@ -35,7 +39,11 @@ function ProductCard({ producto, onAgregar }) {
           <p className="text-xs text-stone-500 mt-2 font-medium">🎮 {producto.plataforma}</p>
         )}
 
-        <p className="text-amber-600 font-bold text-xl mt-1">${producto.precio.toFixed(2)}</p>
+        {producto.categoria === "camisetas" && (
+          <p className="text-xs text-stone-500 mt-2 font-medium">⚽ {producto.equipo}</p>
+        )}
+
+        <p className="text-amber-600 font-bold text-xl mt-1">{precioMostrado}</p>
         <button
           onClick={onAgregar}
           className="mt-3 w-full bg-stone-900 hover:bg-stone-800 text-white py-2 rounded-lg text-sm font-medium transition cursor-pointer"

@@ -27,6 +27,12 @@ const PRODUCTOS = [
   { id: 20, categoria: "videojuegos", nombre: "The Legend of Zelda",     precio: 59.99,  img: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=400",  plataforma: "Nintendo Switch" },
   { id: 21, categoria: "videojuegos", nombre: "Gran Turismo 7",          precio: 49.99,  img: "https://images.unsplash.com/photo-1600861194942-f883de0dfe96?w=400",  plataforma: "PS5" },
   { id: 22, categoria: "videojuegos", nombre: "Halo Infinite",           precio: 39.99,  img: "https://images.unsplash.com/photo-1600861195091-08e5b0d3b7b5?w=400",  plataforma: "Xbox Series X" },
+  { id: 23, categoria: "camisetas",   nombre: "Camiseta Argentina",      precio: 34999,  img: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=400",  equipo: "Selección Argentina",  moneda: "ARS" },
+  { id: 24, categoria: "camisetas",   nombre: "Camiseta Barcelona",      precio: 39999,  img: "https://images.unsplash.com/photo-1589487391730-58f20eb2c308?w=400",  equipo: "FC Barcelona",         moneda: "ARS" },
+  { id: 25, categoria: "camisetas",   nombre: "Camiseta Real Madrid",    precio: 37999,  img: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400",  equipo: "Real Madrid",          moneda: "ARS" },
+  { id: 26, categoria: "camisetas",   nombre: "Camiseta River Plate",    precio: 29999,  img: "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=400",  equipo: "River Plate",          moneda: "ARS" },
+  { id: 27, categoria: "camisetas",   nombre: "Camiseta Boca Juniors",   precio: 28999,  img: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400",  equipo: "Boca Juniors",         moneda: "ARS" },
+  { id: 28, categoria: "camisetas",   nombre: "Camiseta Manchester City",precio: 36999,  img: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=400",  equipo: "Manchester City",      moneda: "ARS" },
 ]
 
 const CATEGORIAS = [
@@ -36,6 +42,7 @@ const CATEGORIAS = [
   { key: "perfumes",    label: "Perfumes",      emoji: "🧴" },
   { key: "vestimenta",  label: "Vestimenta",    emoji: "👕" },
   { key: "videojuegos", label: "Videojuegos",  emoji: "🎮" },
+  { key: "camisetas",   label: "Camisetas",    emoji: "⚽" },
 ]
 
 const DESCRIPCIONES = {
@@ -45,6 +52,7 @@ const DESCRIPCIONES = {
   perfumes: "Fragancias exclusivas para cada ocasión.",
   vestimenta: "Vestimenta moderna y clásica para todo estilo.",
   videojuegos: "Los mejores títulos para todas las consolas.",
+  camisetas: "Las camisetas de tus equipos favoritos en pesos argentinos.",
 }
 
 function App() {
@@ -92,7 +100,7 @@ function App() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative text-center text-white px-4">
           <h2 className="text-5xl md:text-7xl font-bold mb-4">Bienvenido a El Sol</h2>
-          <p className="text-lg md:text-xl mb-8 max-w-xl mx-auto">Encontrá zapatos, televisores, perfumes, vestimenta y videojuegos. Todo en un solo lugar.</p>
+          <p className="text-lg md:text-xl mb-8 max-w-xl mx-auto">Encontrá zapatos, televisores, perfumes, vestimenta, videojuegos y camisetas de fútbol. Todo en un solo lugar.</p>
           <a href="#productos" className="inline-block bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-3 rounded-lg transition">Ver Productos</a>
         </div>
       </section>
@@ -139,7 +147,7 @@ function App() {
           <p className="text-stone-300 text-lg leading-relaxed">
             En <span className="text-amber-400 font-semibold">Zapatería El Sol</span> llevamos más de 30 años
             ofreciendo productos de calidad. Hoy expandimos nuestro catálogo para ofrecerte zapatos,
-            televisores, perfumes y vestimenta con los mejores precios y atención personalizada.
+            televisores, perfumes, vestimenta, videojuegos y camisetas de fútbol con los mejores precios y atención personalizada.
           </p>
         </div>
       </section>
