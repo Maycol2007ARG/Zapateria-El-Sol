@@ -22,6 +22,11 @@ const PRODUCTOS = [
   { id: 15, categoria: "vestimenta",  nombre: "Camisa Formal",          precio: 39.99,  img: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400",  tipo: "Camisa" },
   { id: 16, categoria: "vestimenta",  nombre: "Pantalón de Vestir",     precio: 59.99,  img: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400",  tipo: "Pantalón" },
   { id: 17, categoria: "vestimenta",  nombre: "Chaqueta Cuero",         precio: 89.99,  img: "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=400",  tipo: "Chaqueta" },
+  { id: 18, categoria: "videojuegos", nombre: "FIFA 24",                 precio: 59.99,  img: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400",  plataforma: "PS5" },
+  { id: 19, categoria: "videojuegos", nombre: "Call of Duty",            precio: 69.99,  img: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=400",  plataforma: "Xbox Series X" },
+  { id: 20, categoria: "videojuegos", nombre: "The Legend of Zelda",     precio: 59.99,  img: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=400",  plataforma: "Nintendo Switch" },
+  { id: 21, categoria: "videojuegos", nombre: "Gran Turismo 7",          precio: 49.99,  img: "https://images.unsplash.com/photo-1600861194942-f883de0dfe96?w=400",  plataforma: "PS5" },
+  { id: 22, categoria: "videojuegos", nombre: "Halo Infinite",           precio: 39.99,  img: "https://images.unsplash.com/photo-1600861195091-08e5b0d3b7b5?w=400",  plataforma: "Xbox Series X" },
 ]
 
 const CATEGORIAS = [
@@ -30,6 +35,7 @@ const CATEGORIAS = [
   { key: "televisores", label: "Televisores",   emoji: "📺" },
   { key: "perfumes",    label: "Perfumes",      emoji: "🧴" },
   { key: "vestimenta",  label: "Vestimenta",    emoji: "👕" },
+  { key: "videojuegos", label: "Videojuegos",  emoji: "🎮" },
 ]
 
 const DESCRIPCIONES = {
@@ -38,6 +44,7 @@ const DESCRIPCIONES = {
   televisores: "Los mejores televisores con la más alta calidad de imagen y sonido.",
   perfumes: "Fragancias exclusivas para cada ocasión.",
   vestimenta: "Vestimenta moderna y clásica para todo estilo.",
+  videojuegos: "Los mejores títulos para todas las consolas.",
 }
 
 function App() {
@@ -85,7 +92,7 @@ function App() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative text-center text-white px-4">
           <h2 className="text-5xl md:text-7xl font-bold mb-4">Bienvenido a El Sol</h2>
-          <p className="text-lg md:text-xl mb-8 max-w-xl mx-auto">Encontrá zapatos, televisores, perfumes y vestimenta. Todo en un solo lugar.</p>
+          <p className="text-lg md:text-xl mb-8 max-w-xl mx-auto">Encontrá zapatos, televisores, perfumes, vestimenta y videojuegos. Todo en un solo lugar.</p>
           <a href="#productos" className="inline-block bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-3 rounded-lg transition">Ver Productos</a>
         </div>
       </section>

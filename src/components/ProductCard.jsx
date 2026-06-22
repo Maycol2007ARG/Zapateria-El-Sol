@@ -31,6 +31,10 @@ function ProductCard({ producto, onAgregar }) {
           <p className="text-xs text-stone-400 mt-2 uppercase tracking-wide">👞 Calzado</p>
         )}
 
+        {producto.categoria === "videojuegos" && (
+          <p className="text-xs text-stone-500 mt-2 font-medium">🎮 {producto.plataforma}</p>
+        )}
+
         <p className="text-amber-600 font-bold text-xl mt-1">${producto.precio.toFixed(2)}</p>
         <button
           onClick={onAgregar}
